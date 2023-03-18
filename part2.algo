@@ -1,0 +1,33 @@
+FUNCTION add_new_card(VAR cards : ARRAY_OF INTEGER[] , VAR newCard: INTEGER) : ARRAY_OF INTEGER
+VAR
+    n:INTEGER :=cards.length;
+    new : ARRAY_OF INTEGER[n+1];
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        new[i] := cards[i]
+    END_FOR
+    new[n] := newCard;
+    RETURN new ;
+END
+PROCEDURE swap(VAR x, VAR y : INTEGER)
+VAR
+    z : INTEGER;
+BEGIN
+    z := x;
+    x := y;
+    y := z;
+END
+/*  Bubble sort  */
+PROCEDURE bubble_sort(VAR tab: ARRAY_OF INTEGER:=add_new_card(cards[] , newCard);)
+VAR
+    i,j,n : INTEGER;
+BEGIN
+    n := tab.length;
+    FOR i FROM 0 TO n- 1 STEP 1  DO
+        FOR j  FROM 0 TO n-i-1 STEP 1  DO
+            IF (tab[j] > tab[j+1]) THEN
+                swap(tab[j], tab[j+1])
+            END_IF
+        END_FOR
+    END_FOR
+END

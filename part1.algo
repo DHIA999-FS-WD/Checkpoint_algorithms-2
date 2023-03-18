@@ -1,0 +1,27 @@
+FUNCTION dot_product(  VAR v1 , v2 : ARRAY_OF FLOAT[];) : INTEGER
+VAR
+    ps:INTEGER:=0;
+    i:INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        ps:=ps + v1 +v2;
+    END_FOR
+    RETURN ps ;
+END
+
+
+PROCEDURE test(T)
+VAR
+    T: ARRAY_OF array[n];
+    n ,i:INTEGER;
+BEGIN
+    Read (n);
+    Read (T);
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        IF (dot_product(T[i][0] , T[i][1])) THEN
+            Write (orthogonal)
+        ELSE
+            Write ( not orthogonal)
+        END_IF
+    END_FOR
+END
